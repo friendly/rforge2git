@@ -1,5 +1,15 @@
-Migrating SVN/R-Forge packages to git/Github
-============================================
+---
+title: "Migrating svn/R-Forge packages to git/Github"
+author: Michael Friendly and Phil Chalmers
+date: Sept. 25, 2017
+output:
+  github_document:
+    toc: true
+    toc_depth: 2
+---
+
+
+
 
 > Migration \Mi*gra"tion\, n. [L. _migratio_: cf. F. _migration_]
 
