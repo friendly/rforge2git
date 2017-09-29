@@ -28,8 +28,8 @@ the repositories for these on [R-Forge](https://r-forge.r-project.org/), and use
 testing, and submission of new versions to CRAN directly from R-Forge.  This has generally worked fairly well,
 but I've come to want to switch to using git for version control and Github for my
 package repositories.  As well, [RStudio](http://www.rstudio.com/) offers an
-increasingly attractive IDE for R package development, and I've been using
-RStudio more and more.
+increasingly attractive IDE for R package development, and I've switched to using
+RStudio exclusively.
 
 Why do this?  It violates the Lazy Developer's Golden Rule: "If it ain't broke, don't fix it" (phrase attributed to [Bert Lance](http://en.wikipedia.org/wiki/Bert_Lance) in a different setting)  Well, R-Forge does have some advantages:
 
@@ -393,5 +393,15 @@ but they are not described here.  Additional useful information for using git wi
 R-forge can be found at Cameron Bracken's blog post: 
 [Using Git with R-Forge ...](http://cameron.bracken.bz/git-with-r-forge).
 
+### Back to RStudio
 
+The last thing you need to do is to replace the local svn-RForge project repo for the package
+with the new git-Github one.  The easiest way to do this is to rename the local folder
+from `package` to `package-rforge`.  RStudio won't find it in your Projects list and will
+forget it.
+
+Then, go to the Github repo, copy the clone address `git@github.com:username/package.git`
+to the clipboard, and create a new RStudio project to import from that.
+
+You're done!
 
