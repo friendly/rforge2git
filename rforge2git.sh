@@ -23,5 +23,5 @@ mv pkg/* pkg/.[a-zA-Z]* .
 
 
 # add remote
-git remote add origin git@github.com/${me}:${package}.git
+git remote add origin git@github.com:${me}/${package}.git
 
