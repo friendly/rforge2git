@@ -3,8 +3,7 @@ Migrating SVN/R-Forge packages to git/Github
 
 > Migration \Mi*gra"tion\, n. [L. _migratio_: cf. F. _migration_]
 
-> 1: The movement of persons or groups from one country or locality to another.
-
+> 1: The movement of persons or groups from one country or locality to another.   
 > 2: The passage of software developers from one platform, language or environment to another for the purpose of feeding, breeding or enhanced health of their offspring.
 
 Context
@@ -35,6 +34,7 @@ However, I've found that package building and checking on R-Forge is often extre
 slow (one day or more) and the checking for the devel releases has been disabled for some time.  R-Forge also offers some tools for collaborative work (but only for project members), an email list, bug-tracking, but these have seemed (to me) quite hard to use.
 
 git/Github on the other hand (particularly with RStudio), offers the following significant advantages:
+
 * git (once you understand how it works) is a far better tool for version management
 and collaborative work
 * much easier collaboration with other users and developers:  people can edit your code
@@ -57,6 +57,7 @@ How to migrate?
 ---------------
 
 I posted a query to R-Help, and Yihui Xie replied:
+
 > In the past Github allows one to import from an existing SVN
 > repository automatically via its web interface, but I just checked it
 > and it seems to have gone. What is left is:
@@ -103,7 +104,7 @@ The general form to use with `git svn clone` is
 ```
 git svn clone svn+ssh://developername@svn.r-forge.r-project.org/svnroot/packagename/pkg/
 ```
-By default, this will import all revisions in the history of the project,
+By default, this will import *all* revisions in the history of the project,
 and may take a long time.  If you don't want this, you can use the `-r` option,
 e.g.,
 ```
@@ -342,6 +343,5 @@ but they are not described here.  Additional useful information for using git wi
 R-forge can be found at Cameron Bracken's blog post: 
 [Using Git with R-Forge ...](http://cameron.bracken.bz/git-with-r-forge).
 
-Appendix
---------
+
 
