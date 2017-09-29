@@ -257,6 +257,45 @@ to exclude any files in the local repo you don't want under git control
 (e.g., `.Rhistory`, etc.) and create/edit the `README.md` file for
 the package page on Github.
 
+### Problems with git
+
+You can run into problems with `git` on the initialization of your local repo
+if the repo on Github has content not in your local repo, for example
+a `README.md` or `.gitignore` that was added when the repo on Github was created.
+This will prevent the `git push -u origin master` from working. It looks like this:
+
+```
+euclid: Rgit/vcdextra % git push -u origin master
+To git@github.com:friendly/vcdExtra.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'git@github.com:friendly/vcdExtra.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+```
+
+To solve this, you first have to `git pull` the remote content, but also set your current
+repo to track upstream against the repo on Github.
+
+```
+euclid: Rgit/vcdextra % git branch --set-upstream-to=origin/master master
+Branch master set up to track remote branch master from origin.
+euclid: Rgit/vcdextra % git pull
+Merge made by the 'recursive' strategy.
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+euclid: Rgit/vcdextra % git status
+On branch master
+Your branch is ahead of 'origin/master' by 285 commits.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+```
+
+Now, `git push` should work, and you are in happy land.
+
 ### Putting it all together
 
 It is relatively simple to write a shell or `perl` script or R function
