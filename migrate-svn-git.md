@@ -1,5 +1,15 @@
-Migrating SVN/R-Forge packages to git/Github
-============================================
+---
+title: "Migrating svn/R-Forge packages to git/Github"
+author: Michael Friendly and Phil Chalmers
+date: Sept. 25, 2017
+output:
+  github_document:
+    toc: true
+    toc_depth: 2
+---
+
+
+
 
 > Migration \Mi*gra"tion\, n. [L. _migratio_: cf. F. _migration_]
 
@@ -299,8 +309,9 @@ Now, `git push` should work, and you are in happy land.
 ### Putting it all together
 
 It is relatively simple to write a shell or `perl` script or R function
-that uses system commands to perform these operations.  For example, the
-Appendix lists an R function, `rforge2git()` that carries out these steps.
+that uses system commands to perform these operations.  For example, this
+repository contains an R function, 
+[`rforge2git()`](https://github.com/friendly/rforge2git/blob/master/rforge2git.R) that carries out these steps.
 It allows you to specify the source `svn.repo` and/or the remote `git.repo`
 and does the appropriate things. 
 
