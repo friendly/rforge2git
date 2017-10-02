@@ -286,10 +286,18 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 
 ```
 
-To solve this, you first have to `git pull` the remote content, but also set your current
-repo to track upstream against the repo on Github.
+To solve this, you first have to `git fetch` the remote content, and also set your current
+repo to track upstream against the repo on Github.  Then use `git pull` to merge with your
+local content.
 
 ```
+euclid: Rgit/vcdextra % git fetch
+warning: no common commits
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:friendly/vcdExtra
 euclid: Rgit/vcdextra % git branch --set-upstream-to=origin/master master
 Branch master set up to track remote branch master from origin.
 euclid: Rgit/vcdextra % git pull
